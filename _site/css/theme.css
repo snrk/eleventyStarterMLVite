@@ -1,0 +1,10 @@
+:root {
+    --color-light: #DFD9CF;
+    --color-light-shade: #000000;
+    --color-dark: #000000;
+    --color-primary: #CF053C;
+    --color-primary-shade: #E1C9BF;
+
+    --max-size: 97em;
+    --smartphone: 700px;
+ }

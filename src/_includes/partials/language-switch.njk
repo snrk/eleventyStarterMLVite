@@ -1,0 +1,19 @@
+{% for lgg in site.languages %}
+  {% if loop.first %}<ul class="lang-switch">{% endif %}
+  {% set translatedUrl = "/" + lgg.code + "/" %}
+  {% set activeClass = "is-active" if lgg.code == lang else "" %}
+  {% for item in collections.all %}
+    {% if item.data.translationKey == translationKey and item.data.lang == lgg.code %}
+      {% set translatedUrl = item.url %}
+    {% endif %}
+  {% endfor %}
+  {% if env === 'livetest' %}
+          {% set url = '/e2i' + translatedUrl  %}
+        {% else %}
+          {% set url = translatedUrl  %}
+        {% endif %}
+  <li class="lang-switch__item">
+    <a class="lang-switch__link  link {{ activeClass }}" href="{{ url }}">{{ lgg.label }}</a>
+  </li>
+  {% if loop.last %}</ul>{% endif %}
+{% endfor %}

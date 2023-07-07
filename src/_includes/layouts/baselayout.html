@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}">
+  <head>
+    {% include "partials/basehead.html" %}
+
+    {% set metaImage = site[locale].metaImage %}
+    {% set metaTitle = site[locale].metaTitle %}
+    {% set metaDescription = site[locale].metaDescription %}
+    {% block head %}
+    {% endblock %}
+  </head>
+  <body data-barba="wrapper">
+    <ul class="overlay">
+      <li></li>
+      <li></li>
+    </ul>
+    <main class="main {{ namespace }}" data-barba="container" data-barba-namespace="{{ namespace }}">
+      {% include "partials/header.njk" %}
+        <div class="content" id="main-content" tabindex="-1">
+            {% block content %}
+            {{ content | safe }}
+            {% endblock %} 
+        </div>
+      <footer>
+        {% include "partials/footer.njk" %}
+      </footer>
+    </main>
+  </body>
+</html>

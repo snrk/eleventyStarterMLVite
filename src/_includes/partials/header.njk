@@ -1,0 +1,32 @@
+<header class="header">
+      {% if env !== 'livetest' %}
+          {% set urlPrefix = "/" %}
+        {% else %}
+          {% set urlPrefix = '/e2i/' %}
+        {% endif %}
+    <a class="logo__link" href="{{ urlPrefix + locale }}/">
+        <img src="/assets/images/logo_e2i.svg" alt="logo" class="logo" width="40" height="80">
+    </a>
+    <div>
+      {% include "partials/language-switch.njk" %}
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="visually-hidden">Menu</span>
+        <span class="burger-menu__bar" aria-hidden="true"></span>
+      </button>
+      <nav>
+      <ul id="primary-navigation" data-visible="false" class="primary-navigation">
+        {% for item in header[locale] %}
+          {% set activeClass = "" %}
+          {% if item.url == page.url %}
+            {% set activeClass = "is-active" %}
+          {% endif %}
+          {% if env !== 'livetest' %}
+            {% set url = item.url %}
+          {% else %}
+            {% set url = '/e2i' + item.url %}
+          {% endif %}
+          <li class="menu-item"><a href="{{ url }}" class=" {{ activeClass }}">{{ item.title }}</a></li>        {% endfor %}
+      </ul>
+      </nav>
+    </div>
+</header>

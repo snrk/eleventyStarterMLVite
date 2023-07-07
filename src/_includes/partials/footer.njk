@@ -1,0 +1,47 @@
+<div class="section">
+    <div class="column">
+        <h3 class="title">{{ footer[locale].addressTitle }}</h3>
+         <br>
+        <p class=" no-padding">
+          {{ footer[locale].addressStreet }} {{ footer[locale].addressNumber }}<br>
+          {{ footer[locale].addressPostcode }} {{ footer[locale].addressCity }}
+        </p>
+        <p class="footer no-padding-top">
+          {{ footer[locale].phone.title }} <a class="link" href="{{ footer[locale].phone.url }}">{{ footer[locale].phone.label }}</a>
+        </p>
+    </div>  
+    <div class="column">
+        <nav class="footer-nav">
+          <ul>
+            <li ><a href="{{ footer.mapUrl }} " class="link">{{ footer[locale].directionsLabel }}</a></li>
+
+            {% set activeClass2 = "" %}
+            {% if footer[locale].links.url == page.url %}
+              {% set activeClass2 = "is-active" %}
+            {% endif %}
+            {% if env !== 'livetest' %}
+            {% set linksUrl = footer[locale].links.url %}
+            {% else %}
+              {% set linksUrl = '/e2i' + footer[locale].links.url %}
+            {% endif %}
+
+            <li ><a class="link {{ activeClass2 }}" href="{{ linksUrl }}"  >{{ footer[locale].links.label }}</a></li>
+
+            {% set activeClass1 = "" %}
+            {% if footer[locale].faq.url == page.url %}
+              {% set activeClass1 = "is-active" %}
+            {% endif %}
+            {% if env !== 'livetest' %}
+            {% set faqUrl = footer[locale].faq.url %}
+            {% else %}
+              {% set faqUrl = '/e2i' + footer[locale].faq.url %}
+            {% endif %}
+
+            <li ><a href="{{ faqUrl }}" class="link {{ activeClass1 }}" >{{ footer[locale].faq.label }}</a></li>
+            <li ><a id="contact" href="" rel="nofollow" class="link">{{ footer[locale].email.label }}</a></li>
+            <li ><a href="{{ footer[locale].linkedIn.url }}" class="link">{{ footer[locale].linkedIn.label }}</a></li>
+          </ul>
+        </nav>
+    </div>
+</div>
+

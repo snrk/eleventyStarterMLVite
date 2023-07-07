@@ -1,0 +1,63 @@
+---
+title: e2i-expertises
+lang: en
+type: website
+translationKey: home
+---
+{% extends "layouts/baselayout.html" %}
+
+{% set metaImage = home[locale].image1 %}
+{% set metaTitle = home[locale].title %}
+{% set metaDescription = home[locale].subTitle %}
+{% set namespace = home[locale].namespace %}
+
+{% block content %}
+<div class="home-section">
+    <div class="home-line"></div>
+    <div class="column">
+        <h1 data-splitting="words" class="home-title"><span class="primary-color">{{ home[locale].title }}</span><br> {{ home[locale].subTitle }}</h1>
+        <div class="big-arrow"></div>
+    </div>  
+    <div class="column">
+        {% image home[locale].image1, home[locale].imageDescription1, "(max-width: 57em) 75vw, 100vw", "eager", "home-image" %}
+    </div> 
+</div>
+<div class="section">
+    <div class="line"></div>
+    <div class="column">
+        <h2 data-splitting="words" class="section-title">{{ home[locale].section1Title }}</h2>
+    </div>  
+    <div class="column">
+        <ul class="big-list">
+            <li class ="arrow"><div class ="arrow-icon"></div>{{ home[locale].section1Item1 }}</li>
+            <li class ="arrow"><div class ="arrow-icon"></div>{{ home[locale].section1Item2 }}</li>
+            <li class ="arrow"><div class ="arrow-icon"></div>{{ home[locale].section1Item3 }}</li>
+            <li class ="arrow"><div class ="arrow-icon"></div>{{ home[locale].section1Item4 }}</li>
+            <li class ="arrow"><div class ="arrow-icon"></div>{{ home[locale].section1Item5 }}</li>
+            <li class ="arrow"><div class ="arrow-icon"></div>{{ home[locale].section1Item6 }}</li>
+            <li class ="arrow"><div class ="arrow-icon"></div>{{ home[locale].section1Item7 }}</li>
+            <li class ="arrow"><div class ="arrow-icon"></div>{{ home[locale].section1Item8 }}</li>
+        </ul>
+    </div>
+</div>
+<div class="section big-padding-bottom">
+    <div class="line"></div>
+    <div class="column">
+        {% image home[locale].image2, home[locale].imageDescription2, "(max-width: 57em) 50vw, 100vw", "lazy", "image smartphone-size" %}
+    </div> 
+    <div class="column">
+        <h2 data-splitting="words" class="section-title">{{ home[locale].section2Title }}</h2>
+        <p class="text-animation paragraph">{{ home[locale].section2Content | safe }}</p>
+        <h2 data-splitting="words" class="section-title">{{ home[locale].section3Title }}</h2>
+        <p class="text-animation paragraph">{{ home[locale].section3Content | safe }}</p>
+        <h2 data-splitting="words" class="section-title">{{ home[locale].section4Title }}</h2>
+        <p class="text-animation paragraph small-padding">{{ home[locale].section4Content | safe }}</p>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,21 @@
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ metaTitle }}</title>
+        <meta name="description" content="{{ metaDescription  }}">
+        <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+        <link rel="icon" href="/assets/images/icon.svg" type="image/svg+xml">
+        <meta name="theme-color" content="#dfd9cf">
+        <meta property="og:type" content="{{ site.type }}">
+        <meta property="og:site_name" content="{{ site.name }}" >
+        <meta property="og:title" content="{{ metaTitle }}">
+        <meta property="og:description" content="{{ site[locale].metaDescription }}">
+        {% if metaImage %}
+        <meta  property="og:image" content="{{ site.url }}{% shareImageUri metaImage %}"/>
+        {% endif %}
+        <meta property="og:image:width" content="600" >
+        <link rel="stylesheet" href="/css/global.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@700&family=Wix+Madefor+Text:wght@500&display=swap" rel="stylesheet">
+        <script type="module" src="/js/main.js"></script>

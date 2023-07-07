@@ -1,0 +1,30 @@
+module.exports = {
+    mapUrl: "https://www.google.com/maps/place/E2i+expertises+immobili%C3%A8res+ind%C3%A9pendantes/@46.5730231,6.6054437,17z/data=!3m1!4b1!4m6!3m5!1s0x478c323e60b46bf3:0x960c4c7360889b3f!8m2!3d46.5730231!4d6.6054437!16s%2Fg%2F11btl_y0v7?entry=ttu",
+    fr: {
+        addressTitle: "Contact",
+        addressStreet: "Route de Neuchâtel",
+        addressNumber: "8",
+        addressPostcode: "1032",
+        addressCity: "Romanel-sur-Lausanne",
+        directionsLabel: "Nous trouver",
+        phone: { title: "T", label: "+41216475960", url: "tel:+41216475960" },
+        links: { label: "Liens", url: "/fr/liens/" },
+        faq: { label: "FAQ", url: "/fr/faq/" },
+        email: { label: "E-mail", url: "" },
+        linkedIn: { label: "LinkedIn", url: "https://www.linkedin.com/company/e2i-expertises-immobili%C3%A8res-ind%C3%A9pendantes-s%C3%A0rl/" },
+
+    },
+    en: {
+        addressTitle: "Contact",
+        addressStreet: "Route de Neuchâtel",
+        addressNumber: "8",
+        addressPostcode: "1032",
+        addressCity: "Romanel-sur-Lausanne",
+        directionsLabel: "Find us",
+        phone: { title: "Phone", label: "+41216475960", url: "tel:+41216475960" },
+        links: { label: "Links", url: "/en/links/" },
+        faq: { label: "FAQ", url: "/en/faq/" },
+        email: { label: "E-mail", url: "" },
+        linkedIn: { label: "LinkedIn", url: "https://www.linkedin.com/company/e2i-expertises-immobili%C3%A8res-ind%C3%A9pendantes-s%C3%A0rl/" },
+    },
+};
