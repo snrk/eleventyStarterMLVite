@@ -1,11 +1,12 @@
 ---
-layout: layouts/baselayout.html
 translationKey: team
 lang: fr
 ---
-{% set metaImage =  team[locale].image %}
+{% extends "layouts/baselayout.html" %}
+
 {% set metaTitle = team[locale].title %}
 {% set metaDescription = team[locale].subTitle %}
+{% set metaImage =  team[locale].image %}
 {% set namespace = team[locale].namespace %}
 
 {% block content %}

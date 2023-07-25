@@ -1,11 +1,12 @@
 ---
-layout: layouts/baselayout.html
 translationKey: ourStrengths
 lang: en
 ---   
-{% set metaImage =  site[locale].image %}
+{% extends "layouts/baselayout.html" %}
+
 {% set metaTitle = ourStrengths[locale].title %}
 {% set metaDescription = ourStrengths[locale].subTitle %}
+{% set metaImage =  site[locale].image %}
 {% set namespace = ourStrengths[locale].namespace %}
 
 {% block content %}

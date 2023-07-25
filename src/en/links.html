@@ -4,9 +4,9 @@ lang: en
 ---
 {% extends "layouts/baselayout.html" %}
 
-{% set metaImage = site[locale].image1 %}
-{% set metaTitle = site[locale].title %}
-{% set metaDescription = site[locale].subTitle %}
+{% set metaTitle = links[locale].title %}
+{% set metaDescription = site[locale].metaDescription %}
+{% set metaImage = site[locale].metaImage %}
 {% set namespace = links[locale].namespace %}
 
 {% block content %}

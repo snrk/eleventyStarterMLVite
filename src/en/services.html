@@ -4,9 +4,9 @@ lang: en
 ---
 {% extends "layouts/baselayout.html" %}
         
-{% set metaImage =  services[locale].image %}
 {% set metaTitle = services[locale].title %}
 {% set metaDescription = services[locale].subTitle %}
+{% set metaImage =  services[locale].image %}
 {% set namespace = services[locale].namespace %}
 
 {% block content %}
@@ -27,6 +27,8 @@ lang: en
             <li class ="arrow"><div class ="arrow-icon"></div>{{ services[locale].section1Item2 }}</li>
             <li class ="arrow"><div class ="arrow-icon"></div>{{ services[locale].section1Item3 }}</li>
             <li class ="arrow"><div class ="arrow-icon"></div>{{ services[locale].section1Item4 }}</li>
+            <li class ="arrow"><div class ="arrow-icon"></div>{{ services[locale].section1Item5 }}</li>
+            <li class ="arrow"><div class ="arrow-icon"></div>{{ services[locale].section1Item6 }}</li>
         </ul>
     </div>
 </div>

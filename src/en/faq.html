@@ -2,6 +2,9 @@
 translationKey: faq
 lang: en
 ---
-
 {% extends "layouts/faqlayout.html" %}
+
+{% set metaTitle = faq[locale][0].metaTitle %}
+{% set metaDescription = site[locale].metaDescription %}
+{% set metaImage = site[locale].metaImage %}
 {% set namespace = faq[locale][0].namespace %} 

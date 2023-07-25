@@ -1,25 +1,25 @@
 <ul id="faq" data-visible="false" class="accordion">
+  {% set panelCounter = 1 %} {# Variable pour suivre le numéro de l'élément #}
 
   {% for item in faq[locale] %}
-
     {% if item.title and item.content %}
     
-    <div class="section section-faq">
-      <li class="accordion-panel">
-        <h3 id="panel1-title">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion1-content">
+    <li class="section section-faq">
+      <div class="accordion-panel">
+        <h3>
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="panel{{ panelCounter }}-content" aria-describedby="panel1-content">
             {{ item.title }}
           </button>
         </h3>
-        <div class="accordion-content" role="region" aria-labelledby="panel1-title" aria-hidden="true" id="panel1-content">
+        <div class="accordion-content" role="region" aria-hidden="true" id="panel{{ panelCounter }}-content">
           <div>
             <p>{{ item.content | safe }}</p>
           </div>
         </div>
         <div class="line"></div>
-      </li>
-    </div>
-
+      </div>
+    </li>
+    {% set panelCounter = panelCounter + 1 %} 
     {% endif %}
 
   {% endfor %}
