@@ -6,7 +6,7 @@ translationKey: home
 ---
 {% extends "layouts/baselayout.html" %}
 
-{% set metaTitle = home[locale].title %}
+{% set metaTitle = site.name %}
 {% set metaDescription = home[locale].subTitle %}
 {% set metaImage = home[locale].image1 %}
 {% set namespace = home[locale].namespace %}
@@ -15,7 +15,7 @@ translationKey: home
 <div class="home-section">
     <div class="home-line"></div>
     <div class="column">
-        <h1 data-splitting="words" class="home-title"><span class="primary-color">{{ home[locale].title }}</span><br> {{ home[locale].subTitle }}</h1>
+        <h1 data-splitting="words" class="home-title"><span>{{ home[locale].title }}</span><br> {{ home[locale].subTitle }}</h1>
         <div class="big-arrow"></div>
     </div>  
     <div class="column">

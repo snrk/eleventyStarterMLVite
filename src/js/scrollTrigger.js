@@ -46,8 +46,8 @@ export default () => {
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: gsIt,
-                start: "top 70%",
-                end: "bottom 70%",
+                start: "top 80%",
+                end: "bottom 80%",
                 toggleActions: "play none none none ",
                 markers: false,
             }

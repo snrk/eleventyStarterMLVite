@@ -51,6 +51,12 @@ footer a.link::before {
     a.link::before, .primary-navigation li a::before {
         background-color: var(--color-light);
     }
+
+    a.link.page404::before {
+        background-color: var(--color-dark); 
+        bottom: -1.8rem;
+        top: unset;
+    }
 }
 a.lang-switch__link.link::before {
     background-color: var(--color-dark);
@@ -106,6 +112,17 @@ a:hover::before, a.link:hover::before,  .primary-navigation  li a:hover::before 
     @media (max-width: 57em)  { & {
         flex-direction: column;
         gap: 1.5rem;
+    }}
+}
+
+.credit {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 3.2rem 0 0 0;
+    @media (max-width: 57em)  { & {
+        justify-content: flex-start;
     }}
 }
 

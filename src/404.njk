@@ -1,0 +1,31 @@
+---
+title: 404
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+{% if locale is not defined %}
+  {% set locale = "fr" %}
+{% endif %}
+
+{% extends "layouts/baselayout.html" %}
+
+{% set metaTitle = 404 %}
+{% set metaDescription = 404 %}
+
+{% block content %}
+  <div class="section page-section">
+      <div class="line"></div>
+      <h1 style="
+        font-size:8em; 
+        line-height: 2.2em; 
+        text-align: center;
+      ">{{ title }}</h1>
+  </div>
+  <p style="
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      ">
+  <a class="link page404" href="{% if env === 'livetest' %}/e2i{% endif %}/fr/">Retour à l'accueil</a></p>
+
+{% endblock %}

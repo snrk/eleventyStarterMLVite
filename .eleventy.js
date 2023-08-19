@@ -2,7 +2,6 @@ const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 const postcssNesting = require('postcss-nesting');
 const postcssCustomMedia = require('postcss-custom-media');
 const Image = require("@11ty/eleventy-img");
-const Terser = require("terser");
 
 async function imageShortcode (src, alt, sizes, loading, css) {
     let metadata = await Image(src, {
@@ -49,6 +48,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addLiquidShortcode("image", imageShortcode);
     eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
+    eleventyConfig.setServerPassthroughCopyBehavior('copy');
+    eleventyConfig.addPassthroughCopy("public");
+
     eleventyConfig.addPassthroughCopy("src/en");
     eleventyConfig.addPassthroughCopy("src/fr");
     eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "assets/images/" });
@@ -69,14 +71,15 @@ module.exports = function (eleventyConfig) {
 
         // defaults are shown
         viteOptions: {
+            publicDir: 'public',
             clearScreen: false,
-            appType: "mpa", // New in v2.0.0
-
             server: {
                 mode: "development",
                 host: "192.168.1.29",
                 middlewareMode: true,
             },
+            appType: 'custom',
+            assetsInclude: ['**/*.xml', '**/*.txt', '**/.htaccess.*'],
             css: {
                 postcss: {
                     plugins: [
@@ -85,7 +88,6 @@ module.exports = function (eleventyConfig) {
                     ],
                 },
             },
-
             build: {
                 mode: "production",
                 rollupOptions: {
@@ -93,19 +95,6 @@ module.exports = function (eleventyConfig) {
                         assetFileNames: "assets/[name].[ext]",
                     },
                 },
-                minify: "terser",
-                terserOptions: {
-                    compress: {
-                        drop_console: true,
-                        drop_debugger: true,
-                        passes: 2,
-                    },
-                    format: {
-                        comments: false,
-                    },
-                    mangle: true,
-                },
-
             },
             base: base,
         }
@@ -117,6 +106,7 @@ module.exports = function (eleventyConfig) {
             includes: "_includes",
             output: "_site",
         },
+        passthroughFileCopy: true,
         templateFormats: ["md", "njk", "html"],
         markdownTemplateEngine: "njk",
         htmlTemplateEngine: "njk",

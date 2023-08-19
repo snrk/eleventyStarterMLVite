@@ -1,0 +1,6 @@
+---
+permalink: /public/.htaccess
+eleventyExcludeFromCollections: true
+---
+
+ErrorDocument 404 {% if env === 'livetest' %}/e2i{% endif %}/404.html
