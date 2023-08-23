@@ -3,4 +3,30 @@ permalink: /public/.htaccess
 eleventyExcludeFromCollections: true
 ---
 
+# cache-control headers
+<ifModule mod_headers.c> 
+    # One year for image files
+    <filesMatch ".(gif|ico|jpg|jpeg|png|svg|webp|avif)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </filesMatch>
+
+    # One year for JavaScript and CSS files
+    <filesMatch ".(js|css)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </filesMatch>
+</ifModule>
+
+# 404 page path
 ErrorDocument 404 {% if env === 'livetest' %}/e2i{% endif %}/404.html
+
+# redirect 301
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    Redirect 301 /?lang=en https://e2i-expertises.ch/en/
+    Redirect 301 /prestation/ https://e2i-expertises.ch/fr/prestations/
+    Redirect 301 /methodologie/ https://e2i-expertises.ch/fr/methodologie/
+    Redirect 301 /faq/ https://e2i-expertises.ch/fr/faq/
+    Redirect 301 /team/?lang=en https://e2i-expertises.ch/en/team/
+</IfModule>
+

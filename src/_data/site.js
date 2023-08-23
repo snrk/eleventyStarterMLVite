@@ -1,9 +1,10 @@
 const isProduction = process.env.ELEVENTY_ENV === 'production';
+const isLiveTest = process.env.ELEVENTY_ENV === 'livetest';
 
 module.exports = {
     type: "website",
     buildTime: new Date(),
-    url: isProduction ? 'https://www.e2i-expertises.ch' : 'http://localhost:8080',
+    url: isProduction ? 'https://www.e2i-expertises.ch' : (isLiveTest ? 'https://gabrielbuser.ch/e2i/' : 'http://localhost:8080'),
     name: "e2i-expertises",
     twitter: "",
     en: {

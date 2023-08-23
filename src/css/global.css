@@ -212,7 +212,7 @@ picture img.home-image {
 }
 picture img.smartphone-size {
     @media (max-width: 57em) { & {
-        aspect-ratio: 1;
+        aspect-ratio: 1/1;
         object-fit: cover;
         object-position: 50% 20%;
     }}
@@ -321,7 +321,7 @@ div.big-arrow-up {
     transition: transform 500ms;
   }
   .accordion-trigger::after {
-    rotate: 90deg;
+    transform: rotate(90deg);
   }
   .accordion-trigger[aria-expanded="true"]::before,
   .accordion-trigger[aria-expanded="true"]::after {
