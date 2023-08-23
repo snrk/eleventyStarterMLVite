@@ -182,7 +182,7 @@ a:hover::before, a.link:hover::before,  .primary-navigation  li a:hover::before 
         z-index: 1000;
     }
     .mobile-nav-toggle {
-        aspect-ratio: 1;
+        aspect-ratio: 1/1;
         background: transparent;
         border: 0;
         display: block; 
