@@ -23,10 +23,21 @@ ErrorDocument 404 {% if env === 'livetest' %}/e2i{% endif %}/404.html
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+     # Redirection de www vers non-www
+    RewriteCond %{HTTP_HOST} ^www\.e2i-expertises\.ch$ [NC]
+    RewriteRule ^(.*)$ https://e2i-expertises.ch/$1 [R=301,L]
+
+    # Redirection de https://www.e2i-expertises.ch/fr/ vers https://e2i-expertises.ch/fr/
+    RewriteCond %{HTTP_HOST} ^www\.e2i-expertises\.ch$ [NC]
+    RewriteRule ^fr/(.*)$ https://e2i-expertises.ch/fr/$1 [R=301,L]
+
+    RewriteCond %{QUERY_STRING} ^lang=en$ [NC]
+    RewriteRule ^team/$ https://e2i-expertises.ch/en/team/? [R=301,L]
     Redirect 301 /?lang=en https://e2i-expertises.ch/en/
+    Redirect 301 /company/ https://e2i-expertises.ch/en/company/
+    Redirect 301 /links/ https://e2i-expertises.ch/en/links/
     Redirect 301 /prestation/ https://e2i-expertises.ch/fr/prestations/
     Redirect 301 /methodologie/ https://e2i-expertises.ch/fr/methodologie/
     Redirect 301 /faq/ https://e2i-expertises.ch/fr/faq/
-    Redirect 301 /team/?lang=en https://e2i-expertises.ch/en/team/
 </IfModule>
 

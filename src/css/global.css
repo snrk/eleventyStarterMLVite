@@ -323,7 +323,9 @@ div.big-arrow-up {
   .accordion-trigger::after {
     transform: rotate(90deg);
   }
-  .accordion-trigger[aria-expanded="true"]::before,
+  .accordion-trigger[aria-expanded="true"]::before {
+    transform: rotate(-45deg);
+  }
   .accordion-trigger[aria-expanded="true"]::after {
     transform: rotate(45deg);
   }
