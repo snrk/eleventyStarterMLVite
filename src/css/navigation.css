@@ -120,7 +120,7 @@ a:hover::before, a.link:hover::before,  .primary-navigation  li a:hover::before 
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-end;
-    padding: 3.2rem 0 0 0;
+    padding: 2.8rem 0 0.4rem 0;
     @media (max-width: 57em)  { & {
         justify-content: flex-start;
     }}
