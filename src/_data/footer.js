@@ -1,5 +1,5 @@
 module.exports = {
-    mapUrl: "https://www.google.com/maps/place/E2i+expertises+immobili%C3%A8res+ind%C3%A9pendantes/@46.5730231,6.6054437,17z/data=!3m1!4b1!4m6!3m5!1s0x478c323e60b46bf3:0x960c4c7360889b3f!8m2!3d46.5730231!4d6.6054437!16s%2Fg%2F11btl_y0v7?entry=ttu",
+    mapUrl: "https://www.google.com/maps/place/Chem.+de+la+Source+27B,+1032+Romanel-sur-Lausanne/@46.5639329,6.600083,17z/data=!3m1!4b1!4m6!3m5!1s0x478c32247592126b:0x2f82876342f9cf76!8m2!3d46.5639329!4d6.600083!16s%2Fg%2F11c1ysw_hc?entry=ttu",
     fr: {
         addressTitle: "Contact",
         addressStreet: "Chemin de la Source",
