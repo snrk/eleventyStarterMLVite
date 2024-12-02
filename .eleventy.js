@@ -75,7 +75,7 @@ module.exports = function (eleventyConfig) {
             clearScreen: false,
             server: {
                 mode: "development",
-                host: "192.168.1.29",
+                host: "192.168.1.71",
                 middlewareMode: true,
             },
             appType: 'custom',
